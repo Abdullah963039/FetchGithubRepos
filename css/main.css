@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main: var(--blue);
+
+    --blue: #3f51b5;
+    --orange: #ff5722;
+    --green: #4caf50;
+    --white: #fff;
+    --black: #222;
+    --yellow: #ffeb3b;
+
+    --transition: 0.5s;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.repos-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+    align-items: center;
+    background-color: #f7f7f7;
+    width: calc(100% - 200px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 0.8rem;
+    padding-top: 0;
+}
+
+.repos-container .get-repo {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.repos-container .get-repo input[type="text"] {
+    padding: 1rem;
+    flex-basis: 75%;
+    border: 2px solid var(--main);
+    caret-color: var(--main);
+    font-size: 1rem;
+    outline: none;
+    border-radius: 0.4rem;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+
+.repos-container .get-repo input[type="text"]::placeholder {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--main);
+}
+
+.repos-container .get-repo span#getRepo {
+    background-color: var(--main);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    margin-right: 0.5rem;
+    color: var(--white);
+    font-weight: 700;
+    opacity: 0.8;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.repos-container .get-repo span#getRepo:hover {
+    opacity: 1;
+}
+
+.repos-container .show-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.repos-container .show-data>span {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.repos-container .show-data .repo {
+    background-color: var(--white);
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.repos-container .show-data .repo:not(:last-child) {
+    margin-bottom: 0.8rem;
+    border-bottom: 3px solid #eee;
+}
+
+.repos-container .show-data .repo div {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.45rem;
+    flex-basis: 25%;
+}
+
+.repos-container .show-data .repo a,
+.repos-container .show-data .repo span {
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.repos-container .show-data .repo a {
+    text-decoration: none;
+    background-color: var(--orange);
+}
+
+.repos-container .show-data .repo span {
+    background-color: var(--main);
+}
+
+.repos-container .show-data .false {
+    /* False Input */
+    font-size: 1.5rem;
+    color: var(--main);
+    font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 447px) {
+    html {
+        /* 12px */
+        font-size: 75%;
+    }
+
+    .repos-container {
+        width: calc(100% - 30px);
+    }
+
+    .repos-container .get-repo {
+        flex-direction: column;
+    }
+
+    .repos-container .get-repo input[type="text"] {
+        width: 100%;
+    }
+
+    .repos-container .get-repo span#getRepo {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Medium */
+@media (max-width: 997px) {
+    html {
+        /* 14px */
+        font-size: 87.5%;
+    }
+
+    .repos-container {
+        width: calc(100% - 100px);
+    }
+
+    .repos-container .get-repo {
+        flex-direction: column;
+    }
+
+    .repos-container .get-repo input[type="text"] {
+        width: 100%;
+    }
+
+    .repos-container .get-repo span#getRepo {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Large */
+@media (min-width: 1668px) {
+    html {
+        /* 18px */
+        font-size: 112.5%;
+    }
+
+    .repos-container {
+        width: calc(100% - 300px);
+    }
+}

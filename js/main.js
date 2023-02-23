@@ -33,10 +33,14 @@ function createRepo(repo) {
   // Create Main Repo Div
   let mainDiv = document.createElement("div");
   mainDiv.className = "repo";
+  // Creat p Tag To Store Repo Name
+  let p = document.createElement("p");
   //   Create Main Div Text <Repo Name>
   let repoName = document.createTextNode(repo["name"]);
+  // Add Repo Name To <p>
+  p.appendChild(repoName);
   //   Append Repo Name To Main Div
-  mainDiv.appendChild(repoName);
+  mainDiv.appendChild(p);
 
   //   Craete Div That Contains Stars And The URL
   let innerDiv = document.createElement("div");
